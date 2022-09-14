@@ -1,0 +1,13 @@
+name: Run tests
+
+on: [push, pull-request]
+
+jobs:
+  test: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Its a push
+        if: github.event.on == push
+        run: echo "Hello push"
+      - name: Its a pull request
+        run: echo "Hello pull request"
